@@ -7,9 +7,12 @@ services:
     volumes:
       - elastic_data:/usr/share/elasticsearch/data/
     environment:
+#      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+#      discovery.type: single-node
+#      ELASTIC_PASSWORD: "gamptest01"
+#      KIBANA_PASSWORD: "gamptest01"
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xmx256m
-      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xmx256m,-Xms256m
       - ELASTIC_PASSWORD=gamptest01
       - KIBANA_PASSWORD=gamptest01
       - xpack.security.enabled=true
