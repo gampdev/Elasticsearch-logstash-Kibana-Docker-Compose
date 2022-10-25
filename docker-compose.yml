@@ -16,6 +16,7 @@ services:
       KIBANA_PASSWORD: "gamptest01"
       xpack.security.enabled: true
       xpack.security.authc.api_key.enabled: true
+      xpack.security.enrollment.enabled: true
     ports:
       - '9200:9200'
       - '9300:9300'
