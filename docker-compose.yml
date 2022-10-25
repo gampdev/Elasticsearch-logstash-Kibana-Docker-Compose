@@ -50,8 +50,11 @@ services:
     restart: always
     ports:
       - '8200:8200'
-    env_file:
-      - apm.env
+    environment:
+      - output.elasticsearch.hosts=elasticsearch:9200
+      
+#    env_file:
+#      - apm.env
     depends_on:
       - Elasticsearch
     networks:
