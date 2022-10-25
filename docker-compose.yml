@@ -7,9 +7,6 @@ services:
     volumes:
       - elastic_data:/usr/share/elasticsearch/data/
     environment:
-#      discovery.type: single-node
-#      ELASTIC_PASSWORD: "gamptest01"
-#      KIBANA_PASSWORD: "gamptest01"
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
       discovery.type: single-node
       ELASTIC_PASSWORD: "gamptest01"
@@ -48,7 +45,7 @@ services:
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9200"
 #      ELASTICSEARCH_USERNAME: "elastic"
-#      ELASTICSEARCH_PASSWORD: "gamptest01"
+      ELASTICSEARCH_PASSWORD: "gamptest01"
       
     depends_on:
       - Elasticsearch
