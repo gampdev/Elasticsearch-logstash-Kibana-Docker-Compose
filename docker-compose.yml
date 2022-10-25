@@ -12,7 +12,7 @@ services:
 #      ELASTIC_PASSWORD: "gamptest01"
 #      KIBANA_PASSWORD: "gamptest01"
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xmx256m,-Xms256m"
+      - ES_JAVA_OPTS=-Xmx256m,-Xms256m
       - discovery.type=single-node
       - ELASTIC_PASSWORD=gamptest01
       - KIBANA_PASSWORD=gamptest01
