@@ -43,8 +43,24 @@ services:
       - Elasticsearch
     networks:
       - elk
+  
+  ElasticAPM:
+    image: elastic/apm-server
+    container_name: elastic_apm
+    restart: always
+    ports:
+      - '8200:8200'
+    env_file:
+      - apm.env
+    depends_on:
+      - Elasticsearch
+    networks:
+      - elk
+
+
 volumes:
   elastic_data: {}
+  elastic_apm_data: {}
   log_stash_vol_pv:
     driver: local
     name: logs_stash_vol
