@@ -7,16 +7,15 @@ services:
     volumes:
       - elastic_data:/usr/share/elasticsearch/data/
     environment:
-#      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
 #      discovery.type: single-node
 #      ELASTIC_PASSWORD: "gamptest01"
 #      KIBANA_PASSWORD: "gamptest01"
-      - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xmx256m -Xms256m
-      - ELASTIC_PASSWORD=gamptest01
-      - KIBANA_PASSWORD=gamptest01
-      - xpack.security.enabled=true
-      - xpack.security.authc.api_key.enabled=true
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node
+      ELASTIC_PASSWORD: "gamptest01"
+      KIBANA_PASSWORD: "gamptest01"
+      xpack.security.enabled: true
+      xpack.security.authc.api_key.enabled: true
     ports:
       - '9200:9200'
       - '9300:9300'
@@ -47,8 +46,8 @@ services:
       - '5601:5601'
     environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
-      - elasticsearch.username=elastic
-      - elasticsearch.password=gamptest01
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=gamptest01
     depends_on:
       - Elasticsearch
     networks:
