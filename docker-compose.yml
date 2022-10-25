@@ -47,6 +47,8 @@ services:
       - '5601:5601'
     environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - elasticsearch.username=elastic
+      - elasticsearch.password=gamptest01
     depends_on:
       - Elasticsearch
     networks:
